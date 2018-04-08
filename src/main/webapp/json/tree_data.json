@@ -1,0 +1,87 @@
+[{
+  "id":1,
+  "text":"基于大数据的WiFi日志预处理系统",
+  "attributes":{
+    "url":"abc",
+    "title":"aaa",
+    "folder":"1"
+  },
+  "children":[{
+    "id": 11,
+    "text": "数据初始化和查看",
+    "attributes": {
+      "folder": "1"
+    },
+    "state": "open",
+    "children":[	{
+      "id":110,
+      "text":"数据表的初始化",
+      "attributes":{
+        "folder":"0",
+        "url":"db/initial.jsp"
+      }
+    },{
+      "id":111,
+      "text":"用户登录表查看",
+      "attributes":{
+        "folder":"0",
+        "url":"db/loginuser.jsp"
+      }
+    },{
+      "id":113,
+      "text":"Hadoop集群配置表查看",
+      "attributes":{
+        "folder":"0",
+        "url":"db/hconstants.jsp"
+      }
+    }]
+  },{
+    "id": 12,
+    "text": "预处理",
+    "attributes": {
+      "folder": "1"
+    },
+    "children": [
+      {
+        "id": 121,
+        "text": "文件上传到HDFS",
+        "attributes": {
+          "folder": "0",
+          "url": "preprocess/upload.jsp"
+        }
+      },
+      {
+        "id": 1220,
+        "text": "数据标准化操作",
+        "attributes": {
+          "folder": "0",
+          "url": "preprocess/standardization.jsp"
+        }
+      },
+      {
+        "id": 122,
+        "text": "结果文件下载",
+        "attributes": {
+          "folder": "0",
+          "url": "preprocess/download.jsp"
+        }
+      },
+      {
+        "id": 123,
+        "text": "结果数据存入数据库",
+        "attributes": {
+          "folder": "0",
+          "url": "preprocess/resolve2db.jsp"
+        }
+      },
+      {
+        "id": 124,
+        "text": "数据库过滤数据到HDFS",
+        "attributes": {
+          "folder": "0",
+          "url": "preprocess/db2hdfs.jsp"
+        }
+      }
+    ]
+  }]
+}]

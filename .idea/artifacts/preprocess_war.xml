@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="preprocess:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="preprocess.war">
+      <element id="artifact" artifact-name="preprocess:war exploded" />
+    </root>
+  </artifact>
+</component>
