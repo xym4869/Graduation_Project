@@ -12,7 +12,7 @@
 				</td>
 				<td><input class="easyui-validatebox" type="text"
 					id="fromHDFSFileId" data-options="required:true"
-					style="width:300px" value="/minipre_result/Record" /></td>
+					style="width:300px" value="/minipre_result" /></td>
 
 			</tr>
 			<tr>

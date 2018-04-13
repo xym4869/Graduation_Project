@@ -1,5 +1,6 @@
 package com.euphe.filter.mr;
 
+import com.euphe.util.standardUtil.Analyze;
 import com.euphe.util.standardUtil.StringListTools;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -18,13 +19,15 @@ public class PreprocessingReducer extends Reducer<Text, Text, NullWritable, Text
     protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         try {
             String line = "";
+            String analyze = "";
             String result = "";
             List<String> resultList = new ArrayList<String>();
             for (Text value : values) {
                 line = value.toString();
+                analyze = Analyze.Analyze(line);
 
-                if (line != null)
-                    resultList.add(line);
+                if (analyze != null)
+                    resultList.add(analyze);
             }
             result = StringListTools.ListToString(resultList, "\n");
             context.write(NullWritable.get(), new Text(result));

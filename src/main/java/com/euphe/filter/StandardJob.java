@@ -26,6 +26,7 @@ public class StandardJob extends Configured implements Tool {
         }
         Job job =  Job.getInstance(conf,"Standard input  :"+otherArgs[0]+" to "+otherArgs[1]);
         job.setJarByClass(StandardJob.class);
+        job.setJar("/home/hadoop/pre.jar");
         job.setMapperClass(PreprocessingMapper.class);
         job.setReducerClass(PreprocessingReducer.class);
         job.setNumReduceTasks(1);
