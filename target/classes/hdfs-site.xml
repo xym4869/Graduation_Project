@@ -19,15 +19,15 @@
 <configuration>
 <property>
   <name>dfs.name.dir</name>
-  <value>/usr/local/data/namenode</value>
+  <value>/home/hadoop/softwares/hadoop-2.7.3/data/namenode</value>
 </property>
 <property>
   <name>dfs.data.dir</name>
-  <value>/usr/local/data/datanode</value>
+  <value>/home/hadoop/softwares/hadoop-2.7.3/data/datanode</value>
 </property>
 <property>
   <name>dfs.tmp.dir</name>
-  <value>/usr/local/data/tmp</value>
+  <value>/home/hadoop/softwares/hadoop-2.7.3/data/tmp</value>
 </property>
 <property>
   <name>dfs.replication</name>

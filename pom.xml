@@ -17,7 +17,7 @@
     <commons.fileupload.version>1.2.1</commons.fileupload.version>
     <javassist.version>3.12.1.GA</javassist.version>
     <cxf.version>3.0.2</cxf.version>
-    <hadoop.version>2.6.5</hadoop.version>
+    <hadoop.version>2.7.3</hadoop.version>
     <fastjson.version>1.1.36</fastjson.version>
   </properties>
 
@@ -103,7 +103,7 @@
       <dependency>
           <groupId>commons-io</groupId>
           <artifactId>commons-io</artifactId>
-          <version>1.4</version>
+          <version>2.4</version>
       </dependency>
       <dependency>
           <groupId>commons-lang</groupId>
@@ -404,6 +404,14 @@
           <artifactId>junit</artifactId>
           <version>4.12</version>
       </dependency>
+      
+      <!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
+<dependency>
+    <groupId>com.google.protobuf</groupId>
+    <artifactId>protobuf-java</artifactId>
+    <version>2.5.0</version>
+</dependency>
+      
   </dependencies>
   <build>
     <finalName>preprocess</finalName>
