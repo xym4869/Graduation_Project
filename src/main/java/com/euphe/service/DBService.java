@@ -2,6 +2,7 @@ package com.euphe.service;
 
 import com.euphe.dao.BaseDAO;
 import com.euphe.model.HConstants;
+import com.euphe.model.LogData;
 import com.euphe.model.LoginUser;
 import com.euphe.util.Utils;
 import org.slf4j.Logger;
@@ -9,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -221,4 +223,30 @@ public class DBService {
         return true;
     }
 
+    /**
+     * 批量插入数据
+     *
+     * @param dataPath
+     * @return
+     */
+    public Map<String,Object> insertLogData(String dataPath) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        try{
+            baseDao.executeHql("delete LogData");
+            List<String[]> strings = Utils.parseDatFolder2StrArr(dataPath);
+            List<Object> lds = new ArrayList<Object>();
+            for(String[] s : strings)
+                lds.add(new LogData(s));
+
+            int ret = baseDao.saveBatch(lds);
+            log.info("日志表批量插入了{}条记录！", ret);
+        }catch (Exception e){
+            e.printStackTrace();
+            map.put("flag","false");
+            map.put("msg",e.getMessage());
+            return map;
+        }
+        map.put("flag","true");
+        return map;
+    }
 }

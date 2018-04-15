@@ -11,22 +11,36 @@ public class A3URLUtil {
             if(urlStr == null || urlStr.endsWith("*")){
                 URLLists.add(null);
                 URLLists.add(null);
-                URLLists.add(null);
-                URLLists.add(null);
-                URLLists.add(null);
+//                URLLists.add(null);
+//                URLLists.add(null);
                 return URLLists;
             }
             URL url = new URL(urlStr);
 
             URLLists.add(url.getProtocol());//协议
-            URLLists.add(url.getAuthority());//验证信息
             URLLists.add(url.getHost());//主机名
-            //URLLists.add(url.getPath());//路径
-            if(url.getPath() == "/")
-            	URLLists.add(null);
-            else 
-            	URLLists.add(url.getPath());
-            URLLists.add(Integer.toString(url.getPort()));//端口
+            
+//            int pathlength = 0;
+//            if(url.getPath() == null)
+//            	URLLists.add(null);
+//            else{
+//            	pathlength = url.getPath().length();
+//            	if(!url.getPath().equals("/") && pathlength < 1000)
+//            		URLLists.add(null);
+//            	else
+//            		URLLists.add(url.getPath());//路径
+//            }
+//            
+//            int querylength = 0;
+//            if(url.getQuery() == null)
+//            	URLLists.add(null);
+//            else{
+//            	querylength = url.getQuery().length();
+//            	if(querylength < 1000)
+//            		URLLists.add(url.getQuery());//请求参数
+//            	else
+//            		URLLists.add(null);
+//            }
             return URLLists;
     }
 }

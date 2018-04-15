@@ -28,6 +28,13 @@
         "url":"db/loginuser.jsp"
       }
     },{
+      "id":112,
+      "text":"日志数据表查看",
+      "attributes":{
+        "folder":"0",
+        "url":"db/logdata.jsp"
+      }
+    },{
       "id":113,
       "text":"Hadoop集群配置表查看",
       "attributes":{
@@ -52,7 +59,7 @@
       },
       {
         "id": 1220,
-        "text": "数据标准化操作",
+        "text": "数据清洗",
         "attributes": {
           "folder": "0",
           "url": "preprocess/standardization.jsp"

@@ -115,7 +115,7 @@ public class DBAction {
         }else if("HConstants".equals(tableName)){//初始化集群配置表
             initRet=dBService.insertHConstants();
         }else{
-            //initRet = dBService.insertUserData();//初始用户表(未使用)
+            //initRet = dBService.insertLogData();//初始用户表(未使用)
         }
 
         Utils.write2PrintWriter(initRet);

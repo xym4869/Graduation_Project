@@ -31,6 +31,16 @@ $(function () {
         // ajax 异步提交任务
         callByAJax('cloud/cloud_standard.action',{input:input_i,output:output_i});
     });
+
+    // ===== 解析入库
+    $('#resolveId').bind('click', function(){
+        var input_=$('#resolveFileId').val();
+        // 弹出进度框
+        popupProgressbar('数据入库','数据解析入库中...',1000);
+        // ajax 异步提交任务
+        callByAJax('cloud/cloud_resolve2db.action',{input:input_});
+    });
+
     }
 )
 

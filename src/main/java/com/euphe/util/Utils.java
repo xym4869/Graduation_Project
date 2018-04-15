@@ -8,17 +8,16 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.web.context.ContextLoader;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.io.*;
+import java.util.*;
 
 
 public class Utils {
     private static PrintWriter writer = null;
     private static ResourceBundle resb = null;
+
+    private static String[] logData_attributes = new String[] {"Id", "Time", "MAC", "VPNIP", "UserIP", "WebsiteIP", "DomainKey1",
+    "DomainKey2", "DomainKey3", "OsFamily", "OsName", "UaFamily", "BrowserVersionInfo", "DeviceType", "Type", "Protocol", "Host"};
 
     private static int counter=0;// 在任务运行时返回递增的点字符串
 
@@ -140,5 +139,52 @@ public class Utils {
             counter=0;
         }
         return pre+buff.toString();
+    }
+
+    /**
+     * 定制解析
+     * @param datFolder
+     * @return
+     */
+    public static List<String[]> parseDatFolder2StrArr(String datFolder) {
+        File folder = new File(datFolder);
+        List<String[]> list = new ArrayList<String[]>();
+        File[] files = null;
+        try {
+            files = folder.listFiles();
+            for(File f : files){
+                list.addAll(parseDat2StrArr(f.getAbsolutePath()));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    /**
+     * 定制解析单个log文件
+     * @param datFile
+     * @return
+     * @throws IOException
+     */
+    private static List<String[]> parseDat2StrArr(String datFile) throws IOException {
+        List<String[]> list = new ArrayList<String[]>();
+
+        FileReader fileReader = new FileReader(datFile);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+        String line = null;
+        String[] arr = null;
+        while((line = bufferedReader.readLine()) != null){
+            String[] str = line.split("\t");
+            arr = new String[logData_attributes.length];
+            for(int i=1; i<logData_attributes.length; i++){
+                arr[i] = str[i-1];
+            }
+            list.add(arr);
+        }
+        bufferedReader.close();
+        fileReader.close();
+        return list;
     }
 }

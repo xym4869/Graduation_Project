@@ -32,6 +32,10 @@ public class D2DetectFormatError {
 
                     if(!IsURL.IsMatch(tempList.get(Location.URL)))
                         tempList.set(Location.URL, null);
+                    
+//                    if(!IsURL.IsMatch(tempList.get(Location.URL2)))
+//                        tempList.set(Location.URL2, null);
+                    
                     Detect.mac = tempList.get(Location.MAC);
                     return tempList;
 

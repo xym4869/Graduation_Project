@@ -7,7 +7,7 @@ public class D3DeleteMoreRow {
         try {
             switch (Detect.detectStatus){
                 case 1:
-                    for(int i = tempList.size(); i > 9; i--)
+                    for(int i = tempList.size(); i > 8; i--)
                         tempList.remove(i-1);
                     return tempList;
 

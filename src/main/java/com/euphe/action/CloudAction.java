@@ -53,6 +53,14 @@ public class CloudAction extends ActionSupport {
     }
 
     /**
+     * 解析入库
+     */
+    public void resolve2db(){
+        Map<String,Object> map=dBService.insertLogData(Utils.getRootPathBasedPath(input));
+        Utils.write2PrintWriter(JSON.toJSONString(map));
+        return ;
+    }
+    /**
      * 单个任务监控
      * @throws IOException
      */
