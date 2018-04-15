@@ -1,5 +1,7 @@
 package com.euphe.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.text.ParseException;
@@ -15,7 +17,6 @@ import java.util.Map;
 public class LogData implements Serializable, ObjectInterface{
     private static final long serialVersionUID = 1L;
     private Integer Id;
-    //private Date Date;
     private Date Time;
     private String MAC;
     private String VPNIP;

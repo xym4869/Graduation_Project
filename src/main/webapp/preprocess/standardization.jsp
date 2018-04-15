@@ -15,7 +15,7 @@
             </td>
             <td><input class="easyui-validatebox" type="text"
                        id="standard_input_id" data-options="required:true" style="width:300px"
-                       value="/minipre/testData.log" /></td>
+                       value="/minipre" /></td>
 
         </tr>
         <tr>

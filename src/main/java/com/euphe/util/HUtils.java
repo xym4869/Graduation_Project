@@ -19,14 +19,14 @@ import java.util.*;
 public class HUtils {
 
     // 最原始文件在HDFS上的存储路径
-    public static final String SOURCEFILE = "/minipre/testData.log";
+    public static final String SOURCEFILE = "/minipre";///testData.log
     public static final String DOWNLOAD_EXTENSION = ".log";// 下载文件的后缀名
-    //UserAgent文件的路径和分隔符
-    public static final String UAPATH = "WEB-INF/res/UserAgent.csv";
-    public static final String UASEPARATOR = ",";
-    //DomainKeywords文件的路径和分隔符
-    public static final String DOMAINKEYWORDSPATH = "WEB-INF/res/DomainKeywordsList.csv";
-    public static final String DOMAINKEYWORDSSEPARATOR = ",";
+    ////UserAgent文件的路径和分隔符
+    //public static final String UAPATH = "WEB-INF/res/UserAgent.csv";
+    //public static final String UASEPARATOR = ",";
+    ////DomainKeywords文件的路径和分隔符
+    //public static final String DOMAINKEYWORDSPATH = "WEB-INF/res/DomainKeywordsList.csv";
+    //public static final String DOMAINKEYWORDSSEPARATOR = ",";
 
     private static Configuration conf = null;
     private static FileSystem fs = null;
