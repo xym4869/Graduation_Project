@@ -17,6 +17,7 @@ public class PreprocessingMapper extends Mapper<LongWritable, Text, Text, Text> 
         String line = value.toString();
         log.info(line);
 
+        System.out.println("执行map");
         Text MacKey = new Text();
         line = Detect.Detect(line);
         String mac = Detect.getMac();

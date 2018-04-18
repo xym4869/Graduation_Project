@@ -1,6 +1,6 @@
 [{
   "id":1,
-  "text":"基于大数据的WiFi日志预处理系统",
+  "text":"基于大数据的用户行为分析系统中预处理子系统",
   "attributes":{
     "url":"abc",
     "title":"aaa",
@@ -59,7 +59,7 @@
       },
       {
         "id": 1220,
-        "text": "数据清洗",
+        "text": "数据清洗和集成",
         "attributes": {
           "folder": "0",
           "url": "preprocess/standardization.jsp"

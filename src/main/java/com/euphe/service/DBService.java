@@ -211,11 +211,11 @@ public class DBService {
         try {
             baseDao.executeHql("delete HConstants");
             baseDao.save(new HConstants("mapreduce.app-submission.cross-platform", "true", "Whether to submit tasks across platforms"));
-            baseDao.save(new HConstants("fs.defaultFS", "hdfs://hadoop:9000", "Namenode host and port"));
+            baseDao.save(new HConstants("fs.defaultFS", "hdfs://hadoop1:9000", "Namenode host and port"));
             baseDao.save(new HConstants("mapreduce.framework.name", "yarn", "Mapreduce usage configuration"));
-            baseDao.save(new HConstants("yarn.resourcemanager.address", "hadoop:8032", "ResourceManager host and port"));
-            baseDao.save(new HConstants("yarn.resourcemanager.scheduler.address", "hadoop:8030", "Scheduler host and port"));
-            baseDao.save(new HConstants("mapreduce.jobhistory.address", "hadoop:10020", "JobHistory host and port"));
+            baseDao.save(new HConstants("yarn.resourcemanager.address", "hadoop1:8032", "ResourceManager host and port"));
+            baseDao.save(new HConstants("yarn.resourcemanager.scheduler.address", "hadoop1:8030", "Scheduler host and port"));
+            baseDao.save(new HConstants("mapreduce.jobhistory.address", "hadoop1:10020", "JobHistory host and port"));
         } catch (Exception e) {
             e.printStackTrace();
             return false;

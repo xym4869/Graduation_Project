@@ -411,6 +411,13 @@
     <artifactId>protobuf-java</artifactId>
     <version>2.5.0</version>
 </dependency>
+
+      <!-- https://mvnrepository.com/artifact/cz.mallat.uasparser/uasparser -->
+      <dependency>
+          <groupId>cz.mallat.uasparser</groupId>
+          <artifactId>uasparser</artifactId>
+          <version>0.6.1</version>
+      </dependency>
       
   </dependencies>
   <build>

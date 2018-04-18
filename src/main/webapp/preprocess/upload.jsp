@@ -15,7 +15,8 @@
 				<td><%--@declare id="name"--%><label for="name">输入路径:</label>
 				</td>
 				<td><input class="easyui-validatebox" type="text"
-					id="localFileId" data-options="required:true" style="width:300px" />
+					id="localFileId" data-options="required:true" style="width:300px"
+						   value="C:\Users\xym48\Desktop\testData.log"/>
 				</td>
 
 			</tr>

@@ -19,10 +19,10 @@
 <configuration>
 <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://hadoop:9000</value>
+        <value>hdfs://hadoop1:9000</value>
     </property>
 	<property>
         <name>hadoop.tmp.dir</name>
-        <value>/home/hadoop/softwares/hadoop-2.7.3/tmp</value>
+        <value>/home/hadoop1/softwares/hadoop-2.7.3/tmp</value>
     </property>
 </configuration>

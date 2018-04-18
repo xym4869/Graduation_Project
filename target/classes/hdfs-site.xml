@@ -19,15 +19,15 @@
 <configuration>
 <property>
   <name>dfs.name.dir</name>
-  <value>/home/hadoop/softwares/hadoop-2.7.3/data/namenode</value>
+  <value>/home/hadoop1/softwares/hadoop-2.7.3/data/namenode</value>
 </property>
 <property>
   <name>dfs.data.dir</name>
-  <value>/home/hadoop/softwares/hadoop-2.7.3/data/datanode</value>
+  <value>/home/hadoop1/softwares/hadoop-2.7.3/data/datanode</value>
 </property>
 <property>
   <name>dfs.tmp.dir</name>
-  <value>/home/hadoop/softwares/hadoop-2.7.3/data/tmp</value>
+  <value>/home/hadoop1/softwares/hadoop-2.7.3/data/tmp</value>
 </property>
 <property>
   <name>dfs.replication</name>
@@ -35,7 +35,7 @@
 </property>
 <property>
     <name>dfs.namenode.secondary.http-address</name>
-    <value>hadoop:9001</value>
+    <value>hadoop1:9001</value>
 </property>
  <property>
      <name>dfs.webhdfs.enabled</name>

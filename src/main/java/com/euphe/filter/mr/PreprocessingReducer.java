@@ -17,6 +17,7 @@ public class PreprocessingReducer extends Reducer<Text, Text, NullWritable, Text
 
     @Override
     protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+        System.out.println("执行reducer");
         try {
             String line = "";
             String analyze = "";

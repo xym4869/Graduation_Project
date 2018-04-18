@@ -4,7 +4,9 @@ import com.euphe.filter.StandardJob;
 import com.euphe.util.HUtils;
 import org.apache.hadoop.util.ToolRunner;
 
-public class Standard implements Runnable{
+import java.io.Serializable;
+
+public class Standard implements Runnable, Serializable{
     private String input;
     private String output;
 

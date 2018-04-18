@@ -2,11 +2,11 @@
 
 
 <body>
-<div style="padding-left: 30px;font-size: 20px;padding-top:10px;">数据文件标准化</div>
+<div style="padding-left: 30px;font-size: 20px;padding-top:10px;">数据清洗，集成</div>
 <br>
 <div style="padding-left: 30px;font-size: 15px;padding-top:10px;"><br>
-    数据清洗在Hadoop集群上面进行,如果有MR任务监控页面，请先关闭，再提交本次MR任务。<br>
-    此处对原文件做了如下操作：数据规范化，缺失值填补，（时间）离群点检测，数据规约。<br>
+    数据清洗与集成在Hadoop集群上面进行,如果有MR任务监控页面，请先关闭，再提交本次MR任务。<br>
+    此处对原文件做了如下操作：数据规范化，缺失值填补，离群点检测。<br>
 </div>
 <div style="padding-left: 30px;font-size: 20px;padding-top:10px;">
     <table>
@@ -15,7 +15,7 @@
             </td>
             <td><input class="easyui-validatebox" type="text"
                        id="standard_input_id" data-options="required:true" style="width:300px"
-                       value="/minipre" /></td>
+                       value="/minipre/testData.log" /></td>
 
         </tr>
         <tr>
