@@ -32,6 +32,16 @@ $(function () {
         callByAJax('cloud/cloud_standard.action',{input:input_i,output:output_i});
     });
 
+    // =====数据归约处理
+    $('#reduc_submit_id').bind('click', function(){
+        var input_i=$('#reduc_input_id').val();
+        var output_i=$('#reduc_output_id').val();
+        // 弹出进度框
+        popupProgressbar('提交任务','提交任务到云平台中...',1000);
+        // ajax 异步提交任务
+        callByAJax('cloud/cloud_reduction.action',{input:input_i,output:output_i});
+    });
+
     // ===== 解析入库
     $('#resolveId').bind('click', function(){
         var input_=$('#resolveFileId').val();

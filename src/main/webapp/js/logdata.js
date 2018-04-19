@@ -315,13 +315,6 @@ function deleteRow(index,rowIndex){
 }
 
 function saveRow(index,node){
-    // console.info("node.id:"+node.id+",node.username:"+node.username);
-    // var json={id:node.id,custKey:node.custKey,custValue:node.custValue,description:node.description};
-    // var json={id:node.id,aboutMe:node.aboutMe,age:node.age,creationDate:node.creationDate,
-    //     displayName:node.displayName,downVotes:node.downVotes,emailHash:node.emailHash,
-    //     lastAccessDate:node.lastAccessDate,location:node.location,reputation:node.reputation,
-    //     upVotes:node.upVotes,views:node.views,websiteUrl:node.websiteUrl};
-
     var json = {id:node.id, time:node.time, MAC:node.MAC, VPNIP:node.VPNIP, userIP:node.userIP, websiteIP:node.websiteIP,
     domainKey1:node.domainKey1, domainKey2:node.domainKey2, domainKey3:node.domainKey3, osFamily:node.osFamily,
     osName:node.osName, uaFamily:node.uaFamily, browserVersionInfo:node.browserVersionInfo,type:node.type,

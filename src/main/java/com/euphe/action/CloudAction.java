@@ -3,6 +3,7 @@ package com.euphe.action;
 import com.alibaba.fastjson.JSON;
 import com.euphe.model.CurrentJobInfo;
 import com.euphe.service.DBService;
+import com.euphe.thread.Reduction;
 import com.euphe.thread.Standard;
 import com.euphe.util.HUtils;
 import com.euphe.util.Utils;
@@ -125,7 +126,9 @@ public class CloudAction extends ActionSupport {
      * 上传文件
      */
     public void upload(){
-        Map<String,Object> map = HUtils.upload(input, HUtils.getHDFSPath(HUtils.SOURCEFILE));
+        String[] strings = input.split("\\\\");
+        output = "/minirec/" + strings[strings.length-1];
+        Map<String,Object> map = HUtils.upload(input, HUtils.getHDFSPath(output));
         //HUtils.SOURCEFILE是文件上传到linux上的文件路径+文件名
         //getHDFSPath则获得相应的url路径
 
@@ -137,8 +140,6 @@ public class CloudAction extends ActionSupport {
      * 下载文件到本地文件夹
      */
     public void download(){
-        // output 应该和HUtils.DEDUPLICATE_LOCAL保持一致
-
         Map<String,Object> map = HUtils.downLoad(input, Utils.getRootPathBasedPath(output));
 
         Utils.write2PrintWriter(JSON.toJSONString(map));
@@ -158,6 +159,27 @@ public class CloudAction extends ActionSupport {
             map.put("flag", "true");//任务启动完毕标志（不代表任务运行完成，仅仅是启动完毕）
             map.put("monitor", "true");//打开监控页面标志
         } catch (Exception e) {
+            e.printStackTrace();
+            map.put("flag", "false");
+            map.put("monitor", "false");
+            map.put("msg", e.getMessage());
+        }
+        Utils.write2PrintWriter(JSON.toJSONString(map));
+    }
+
+    /**
+     * 归约任务提交
+     */
+    public void reduction(){
+        Map<String, Object> map = new HashMap<String, Object>();
+        try {
+            HUtils.setJobStartTime(System.currentTimeMillis()-10000);//设置任务开始时间
+            //-10000是为了消除延时的影响，将任务提交时间提前,保证实际任务启动时间一定在JobStartTime之后。
+            HUtils.JOBNUM=1;//设置任务数
+            new Thread(new Reduction(input,output)).start();//启动任务线程
+            map.put("flag", "true");//任务启动完毕标志（不代表任务运行完成，仅仅是启动完毕）
+            map.put("monitor", "true");//打开监控页面标志
+        }catch (Exception e){
             e.printStackTrace();
             map.put("flag", "false");
             map.put("monitor", "false");

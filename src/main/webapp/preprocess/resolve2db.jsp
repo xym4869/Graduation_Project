@@ -10,7 +10,7 @@
 					<td><%--@declare id="name"--%><label for="name">输入路径:</label></td>
 					<td><input class="easyui-validatebox" type="text"
 						id="resolveFileId" data-options="required:true"  style="width:300px"
-						value="WEB-INF/classes/standardized_data"/>
+						value="WEB-INF/classes/standardizedData"/>
 					</td>
 					
 				</tr>

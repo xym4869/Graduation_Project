@@ -20,7 +20,7 @@
 				</td>
 				<td><input class="easyui-validatebox" type="text"
 					id="tolocalFileId" data-options="required:true" style="width:300px"
-					value="WEB-INF/classes/standardized_data" /></td>
+					value="WEB-INF/classes/standardizedData" /></td>
 
 			</tr>
 			<tr>

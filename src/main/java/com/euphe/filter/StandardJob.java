@@ -3,6 +3,7 @@ package com.euphe.filter;
 import com.euphe.filter.mr.PreprocessingMapper;
 import com.euphe.filter.mr.PreprocessingReducer;
 import com.euphe.util.HUtils;
+import com.euphe.util.Utils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileSystem;
@@ -19,7 +20,7 @@ public class StandardJob extends Configured implements Tool {
     @Override
     public int run(String[] args) throws Exception {
         Configuration conf = HUtils.getConf();
-        conf.set("mapreduce.job.jar", "C:\\Users\\xym48\\workplace\\preprocess\\src\\main\\resources\\mr.jar");
+        conf.set("mapreduce.job.jar", Utils.getRootPathBasedPath("WEB-INF/jars/pre.jar"));
         String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();//解析命令行参数
         if (otherArgs.length !=2) {//要求必须有输入和输出路径两个参数
             System.err.println("Usage: com.euphe.filter.StandardJob <in> <out>");
