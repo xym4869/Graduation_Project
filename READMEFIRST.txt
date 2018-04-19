@@ -1,0 +1,2 @@
+该项目请和standardMR，ReductionTest配合使用
+这两个项目负责打mr的jar包，里面的hdfs路径和包名等都要和该项目一致，打包放在WEB-INF/classes/jars中
