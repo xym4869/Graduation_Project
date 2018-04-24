@@ -2,7 +2,7 @@
 
 
 <body>
-	<div style="padding-left: 30px;font-size: 20px;padding-top:10px;">HDFS文件下载到本地</div>
+	<div style="padding-left: 30px;font-size: 20px;padding-top:10px;">HDFS文件下载</div>
 	<br>
 	<div style="padding-left: 30px;font-size: 15px;padding-top:10px;">
 	我们需要把数据处理后的结果数据拿到本地，以便后面的数据入库操作。<br>

@@ -30,4 +30,9 @@
      <name>mapreduce.jobhistory.webapp.address</name>
      <value>hadoop1:19888</value>
    </property>
+
+    <property>
+        <name>mapred.child.java.opts</name>
+        <value>-Dfile.encoding=utf-8 -Duser.language=zh -Xmx200m</value>
+    </property>
 </configuration>

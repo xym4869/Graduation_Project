@@ -3,6 +3,7 @@ package com.euphe.action;
 import com.alibaba.fastjson.JSON;
 import com.euphe.model.CurrentJobInfo;
 import com.euphe.service.DBService;
+import com.euphe.thread.Filter2hdfs;
 import com.euphe.thread.Reduction;
 import com.euphe.thread.Standard;
 import com.euphe.util.HUtils;
@@ -51,6 +52,16 @@ public class CloudAction extends ActionSupport {
 
     public void setInput(String input) {
         this.input = input;
+    }
+
+    private String record;
+
+    public String getRecord() {
+        return record;
+    }
+
+    public void setRecord(String record) {
+        this.record = record;
     }
 
     /**
@@ -147,7 +158,7 @@ public class CloudAction extends ActionSupport {
     }
 
     /**
-     * 标准化任务提交
+     * 预处理任务提交
      */
     public void standard(){
         Map<String ,Object> map = new HashMap<String,Object>();
@@ -168,7 +179,7 @@ public class CloudAction extends ActionSupport {
     }
 
     /**
-     * 归约任务提交
+     * 集成任务提交
      */
     public void reduction(){
         Map<String, Object> map = new HashMap<String, Object>();
@@ -186,5 +197,50 @@ public class CloudAction extends ActionSupport {
             map.put("msg", e.getMessage());
         }
         Utils.write2PrintWriter(JSON.toJSONString(map));
+    }
+
+    /**
+     * 过滤任务提交
+     */
+    public void dbtohdfs(){
+        Map<String, Object> map = new HashMap<String, Object>();
+        try {
+            HUtils.setJobStartTime(System.currentTimeMillis()-10000);//设置任务开始时间
+            //-10000是为了消除延时的影响，将任务提交时间提前,保证实际任务启动时间一定在JobStartTime之后。
+            HUtils.JOBNUM=1;//设置任务数
+            new Thread(new Filter2hdfs(input,output)).start();//启动任务线程
+            map.put("flag", "true");//任务启动完毕标志（不代表任务运行完成，仅仅是启动完毕）
+            map.put("monitor", "true");//打开监控页面标志
+        }catch (Exception e){
+            e.printStackTrace();
+            map.put("flag", "false");
+            map.put("monitor", "false");
+            map.put("msg", e.getMessage());
+        }
+        Utils.write2PrintWriter(JSON.toJSONString(map));
+    }
+
+    /**
+     * 数据库数据解析到云平台,为序列文件
+     */
+    public void db2hdfs(){
+        List<Object> list = dBService.getTableAllData("LogData");
+        Map<String,Object> map = new HashMap<String,Object>();
+        if(list.size()==0){
+            map.put("flag", "false");
+            Utils.write2PrintWriter(JSON.toJSONString(map));
+            return ;
+        }
+        try{
+            HUtils.db2hdfs(list,output,Integer.parseInt(record));//解析入库
+        }catch(Exception e){
+            map.put("flag", "false");
+            map.put("msg", e.getMessage());
+            Utils.write2PrintWriter(JSON.toJSONString(map));
+            return ;
+        }
+        map.put("flag", "true");
+        Utils.write2PrintWriter(JSON.toJSONString(map));
+        return ;
     }
 }

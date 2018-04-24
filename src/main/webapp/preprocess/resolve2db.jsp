@@ -2,7 +2,7 @@
 
 
 <body>
-	<div  style="padding-left: 30px;font-size: 20px;padding-top:10px;">结果文件解析到数据库</div><br>
+	<div  style="padding-left: 30px;font-size: 20px;padding-top:10px;">结果解析</div><br>
     <div style="padding-left: 30px;font-size: 20px;padding-top:10px;">
 
 			<table>

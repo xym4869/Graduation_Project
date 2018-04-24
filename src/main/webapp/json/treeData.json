@@ -57,7 +57,7 @@
       }
     },{
       "id":1220,
-      "text":"数据归约",
+      "text":"文件合并",
       "attributes":{
         "folder":"0",
         "url":"preprocess/reduction.jsp"
@@ -65,7 +65,7 @@
 
     },{
       "id":122,
-      "text":"数据清洗和集成",
+      "text":"数据预处理",
       "attributes":{
         "folder":"0",
         "url":"preprocess/standardization.jsp"

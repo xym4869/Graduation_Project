@@ -51,6 +51,17 @@ $(function () {
         callByAJax('cloud/cloud_resolve2db.action',{input:input_});
     });
 
+        // ===== 数据预处理 数据库到HDFS
+        $('#preprocess_submit_id').bind('click', function(){
+            //var record_=$('#preprocess_record_id').val();
+            var input_=$('#preprocess_input_id').val();
+            var output_=$('#preprocess_output_id').val();
+
+            // 弹出进度框
+            popupProgressbar('请等待','数据库数据解析并序列化到HFDS中...',1000);
+            // ajax 异步提交任务
+            callByAJax('cloud/cloud_dbtohdfs.action',{input:input_, output:output_});//record:record_,
+        });
     }
 )
 

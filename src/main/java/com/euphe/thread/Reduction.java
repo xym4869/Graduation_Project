@@ -5,7 +5,7 @@ import com.euphe.util.HUtils;
 import org.apache.hadoop.util.ToolRunner;
 
 /**
- * 归约
+ * 文件合并-数据集成
  */
 public class Reduction implements Runnable {
     private String input;
