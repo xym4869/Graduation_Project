@@ -21,8 +21,10 @@ public class StandardJob extends Configured implements Tool {
     public int run(String[] args) throws Exception {
         Configuration conf = HUtils.getConf();
         conf.set("mapreduce.job.jar", Utils.getRootPathBasedPath("WEB-INF/jars/pre.jar"));
-        String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();//解析命令行参数
-        if (otherArgs.length !=2) {//要求必须有输入和输出路径两个参数
+        //解析命令行参数
+        String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
+        //要求必须有输入和输出路径两个参数
+        if (otherArgs.length !=2) {
             System.err.println("Usage: com.euphe.filter.StandardJob <in> <out>");
             System.exit(2);
         }
@@ -41,7 +43,8 @@ public class StandardJob extends Configured implements Tool {
         System.out.println("添加输入输出");
         FileInputFormat.setInputPaths(job, new Path(otherArgs[0]));
         FileOutputFormat.setOutputPath(job,new Path(otherArgs[1]));
-        FileSystem.get(conf).delete(new Path(otherArgs[1]), true);//调用任务前先删除输出目录
+        //调用任务前先删除输出目录
+        FileSystem.get(conf).delete(new Path(otherArgs[1]), true);
         boolean b = job.waitForCompletion(true);
         if(!b) {
             System.err.println("This task has failed!!!");

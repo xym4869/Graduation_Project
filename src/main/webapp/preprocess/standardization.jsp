@@ -11,7 +11,7 @@
         <li>数据清洗（格式标准化，缺失值填补，离群点检测）</li>
         <li>数据集成（清除冗余数据）</li>
         <li>数据归约（属性子集选择）</li>
-        <li>数据变换（数据规范化，属性构造）</li>
+        <li>数据变换（属性构造）</li>
     </ul>
 </div>
 <div style="padding-left: 30px;font-size: 20px;padding-top:10px;">
@@ -29,7 +29,7 @@
             </td>
             <td><input class="easyui-validatebox" type="text"
                        id="standard_output_id" data-options="required:true" style="width:300px"
-                       value="/minipre_result" /></td>
+                       value="/minpre_result" /></td>
 
         </tr>
         <tr>

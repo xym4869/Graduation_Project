@@ -153,10 +153,12 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         return (Long) q.uniqueResult();
     }
 
+    @Override
     public Integer executeHql(String hql) {
         return this.getCurrentSession().createQuery(hql).executeUpdate();
     }
 
+    @Override
     public Integer executeHql(String hql, Object[] param) {
         Query q = this.getCurrentSession().createQuery(hql);
         if (param != null && param.length > 0) {
@@ -167,6 +169,7 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
         return q.executeUpdate();
     }
 
+    @Override
     public Integer executeHql(String hql, List<Object> param) {
         Query q = this.getCurrentSession().createQuery(hql);
         if (param != null && param.size() > 0) {

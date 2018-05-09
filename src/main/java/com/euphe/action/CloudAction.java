@@ -82,10 +82,11 @@ public class CloudAction extends ActionSupport {
         try{
             currJobList= HUtils.getJobs();
             jsonMap.put("jobnums", HUtils.JOBNUM);
-            // 任务完成的标识是获取的任务个数必须等于jobNum，同时最后一个job完成
-            // true 所有任务完成
-            // false 任务正在运行
-            // error 某一个任务运行失败，则不再监控
+            /** 任务完成的标识是获取的任务个数必须等于jobNum，同时最后一个job完成
+            * true 所有任务完成
+            * false 任务正在运行
+            * error 某一个任务运行失败，则不再监控
+             * */
 
             if(currJobList.size()>=HUtils.JOBNUM){// 如果返回的list有JOBNUM个，那么才可能完成任务
                 if("success".equals(HUtils.hasFinished(currJobList.get(currJobList.size()-1)))){
@@ -163,12 +164,18 @@ public class CloudAction extends ActionSupport {
     public void standard(){
         Map<String ,Object> map = new HashMap<String,Object>();
         try{
-            HUtils.setJobStartTime(System.currentTimeMillis()-10000);//设置任务开始时间
+            //设置任务开始时间
+            HUtils.setJobStartTime(System.currentTimeMillis()-10000);
             //-10000是为了消除延时的影响，将任务提交时间提前,保证实际任务启动时间一定在JobStartTime之后。
-            HUtils.JOBNUM=1;//设置任务数
-            new Thread(new Standard(input,output)).start();//启动任务线程
-            map.put("flag", "true");//任务启动完毕标志（不代表任务运行完成，仅仅是启动完毕）
-            map.put("monitor", "true");//打开监控页面标志
+
+            //设置任务数
+            HUtils.JOBNUM=1;
+            //启动任务线程
+            new Thread(new Standard(input,output)).start();
+            //任务启动完毕标志（不代表任务运行完成，仅仅是启动完毕）
+            map.put("flag", "true");
+            //打开监控页面标志
+            map.put("monitor", "true");
         } catch (Exception e) {
             e.printStackTrace();
             map.put("flag", "false");

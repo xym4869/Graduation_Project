@@ -16,7 +16,7 @@
 				</td>
 				<td><input class="easyui-validatebox" type="text"
 					id="localFileId" data-options="required:true" style="width:300px"
-						   value="C:\Users\xym48\Desktop\testData.log"/>
+						   value="C:\Users\xym48\Desktop\test1.log"/>
 				</td>
 
 			</tr>

@@ -17,8 +17,9 @@ public class Shufflter {
             if(dk1.equals("null")
                     && of.equals("unknown")
                     && uf.equals("unknown")
-                    && ty.equals("unknown"))
+                    && ty.equals("unknown")) {
                 fflg = false;
+            }
 
         }catch (Exception e){
             e.printStackTrace();

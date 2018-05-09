@@ -20,12 +20,19 @@ public class LogData implements Serializable, ObjectInterface{
     private Date Time;
     private String MAC;
     private String VPNIP;
-    private String UserIP;
     private String WebsiteIP;
+    private String UserIP;
+
+    private String Country;
+    private String Region;
+    private String City;
 
     private String DomainKey1;
+    private String DK1type;
     private String DomainKey2;
+    private String DK2type;
     private String DomainKey3;
+    private String DK3type;
 
     private String OsFamily;//操作系统家族
     private String OsName;//操作系统详细名称
@@ -36,8 +43,6 @@ public class LogData implements Serializable, ObjectInterface{
 
     private String Protocol;//协议
     private String Host;//主机名
-    //private String Path;//路径
-    //private String Query;//请求信息
 
     public LogData() {
     }
@@ -46,16 +51,22 @@ public class LogData implements Serializable, ObjectInterface{
     public Object setObjectByMap(Map<String, Object> map) {
         LogData ld = new LogData();
         ld.setId((Integer)map.get("Id"));
-        //ld.setDate((Date)map.get("Date"));
         ld.setTime((Date)map.get("Time"));
         ld.setMAC((String)map.get("MAC"));
         ld.setVPNIP((String)map.get("VPNIP"));
-        ld.setUserIP((String)map.get("UserIP"));
         ld.setWebsiteIP((String)map.get("WebsiteIP"));
+        ld.setUserIP((String)map.get("UserIP"));
+
+        ld.setCountry((String)map.get("Country"));
+        ld.setRegion((String)map.get("Region"));
+        ld.setCity((String)map.get("City"));
 
         ld.setDomainKey1((String)map.get("DomainKey1"));
+        ld.setDK1type((String)map.get("DK1type"));
         ld.setDomainKey2((String)map.get("DomainKey2"));
+        ld.setDK2type((String)map.get("DK2type"));
         ld.setDomainKey3((String)map.get("DomainKey3"));
+        ld.setDK3type((String)map.get("DK3type"));
 
         ld.setOsFamily((String)map.get("OsFamily"));
         ld.setOsName((String)map.get("OsName"));
@@ -66,33 +77,35 @@ public class LogData implements Serializable, ObjectInterface{
 
         ld.setProtocol((String)map.get("Protocol"));
         ld.setHost((String)map.get("Host"));
-        //ld.setPath((String)map.get("Path"));
-        //ld.setQuery((String)map.get("Query"));
         return ld;
     }
     public LogData(String[] s) throws ParseException {
-        //this.Date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(s[1]);
         this.Time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(s[1]);
         this.MAC = s[2];
         this.VPNIP = s[3];
-        this.UserIP = s[4];
-        this.WebsiteIP = s[5];
+        this.WebsiteIP = s[4];
+        this.UserIP = s[5];
 
-        this.DomainKey1 = s[6];
-        this.DomainKey2 = s[7];
-        this.DomainKey3 = s[8];
+        this.Country = s[6];
+        this.Region = s[7];
+        this.City = s[8];
 
-        this.OsFamily = s[9];
-        this.OsName = s[10];
-        this.UaFamily = s[11];
-        this.BrowserVersionInfo = s[12];
-        this.DeviceType = s[13];
-        this.Type = s[14];
+        this.DomainKey1 = s[9];
+        this.DK1type = s[10];
+        this.DomainKey2 = s[11];
+        this.DK2type = s[12];
+        this.DomainKey3 = s[13];
+        this.DK3type = s[14];
 
-        this.Protocol = s[15];
-        this.Host = s[16];
-        //this.Path = s[18];
-        //this.Query = s[19];
+        this.OsFamily = s[15];
+        this.OsName = s[16];
+        this.UaFamily = s[17];
+        this.BrowserVersionInfo = s[18];
+        this.DeviceType = s[19];
+        this.Type = s[20];
+
+        this.Protocol = s[21];
+        this.Host = s[22];
     }
 
     @Id
@@ -105,13 +118,29 @@ public class LogData implements Serializable, ObjectInterface{
         Id = id;
     }
 
-    //public java.util.Date getDate() {
-    //    return Date;
-    //}
-    //
-    //public void setDate(java.util.Date date) {
-    //    Date = date;
-    //}
+    public String getCountry() {
+        return Country;
+    }
+
+    public void setCountry(String country) {
+        Country = country;
+    }
+
+    public String getRegion() {
+        return Region;
+    }
+
+    public void setRegion(String region) {
+        Region = region;
+    }
+
+    public String getCity() {
+        return City;
+    }
+
+    public void setCity(String city) {
+        City = city;
+    }
 
     public java.util.Date getTime() {
         return Time;
@@ -175,6 +204,29 @@ public class LogData implements Serializable, ObjectInterface{
 
     public void setDomainKey3(String domainKey3) {
         DomainKey3 = domainKey3;
+    }
+    public String getDK1type() {
+        return DK1type;
+    }
+
+    public void setDK1type(String DK1type) {
+        this.DK1type = DK1type;
+    }
+
+    public String getDK2type() {
+        return DK2type;
+    }
+
+    public void setDK2type(String DK2type) {
+        this.DK2type = DK2type;
+    }
+
+    public String getDK3type() {
+        return DK3type;
+    }
+
+    public void setDK3type(String DK3type) {
+        this.DK3type = DK3type;
     }
 
     public String getOsFamily() {
@@ -241,21 +293,4 @@ public class LogData implements Serializable, ObjectInterface{
         Host = host;
     }
 
-    //@Column(length=1000)
-    //public String getPath() {
-    //    return Path;
-    //}
-    //
-    //public void setPath(String path) {
-    //    Path = path;
-    //}
-    //
-    //@Column(length=1000)
-    //public String getQuery() {
-    //    return Query;
-    //}
-    //
-    //public void setQuery(String query) {
-    //    Query = query;
-    //}
 }

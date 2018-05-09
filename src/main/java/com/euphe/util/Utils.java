@@ -16,8 +16,9 @@ public class Utils {
     private static PrintWriter writer = null;
     private static ResourceBundle resb = null;
 
-    private static String[] logData_attributes = new String[] {"Id", "Time", "MAC", "VPNIP", "UserIP", "WebsiteIP", "DomainKey1",
-    "DomainKey2", "DomainKey3", "OsFamily", "OsName", "UaFamily", "BrowserVersionInfo", "DeviceType", "Type", "Protocol", "Host"};
+    private static String[] logData_attributes = new String[] {"Id", "Time", "MAC", "VPNIP", "UserIP", "WebsiteIP", "DomainKey1", "DK1type",
+    "DomainKey2", "DK2type", "DomainKey3", "DK3type", "Country","Region","City","OsFamily", "OsName", "UaFamily", "BrowserVersionInfo",
+            "DeviceType", "Type", "Protocol", "Host"};
 
     private static int counter=0;// 在任务运行时返回递增的点字符串
 

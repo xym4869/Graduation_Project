@@ -22,7 +22,7 @@ $(function () {
         callByAJax('cloud/cloud_download.action',{input:input_,output:output_});
     });
 
-    // =====数据标准化处理
+    // =====数据预处理
     $('#standard_submit_id').bind('click', function(){
         var input_i=$('#standard_input_id').val();
         var output_i=$('#standard_output_id').val();

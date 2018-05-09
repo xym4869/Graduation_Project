@@ -57,6 +57,16 @@ $(function() {
                         }
                     }},
                 {
+                    field : 'websiteIP',
+                    title : 'WebsiteIP',
+                    //width : '150',
+                    editor: {//设置其为可编辑
+                        type: 'validatebox',//设置编辑样式 自带样式有：text，textarea，checkbox，numberbox，validatebox，datebox，combobox，combotree 可自行扩展
+                        options: {
+                            required: true//设置编辑规则属性
+                        }
+                    }},
+                {
                     field : 'userIP',
                     title : 'UserIP',
                    // width : '150',
@@ -67,8 +77,28 @@ $(function() {
                         }
                     }},
                 {
-                    field : 'websiteIP',
-                    title : 'WebsiteIP',
+                    field : 'country',
+                    title : 'Country',
+                    //width : '150',
+                    editor: {//设置其为可编辑
+                        type: 'validatebox',//设置编辑样式 自带样式有：text，textarea，checkbox，numberbox，validatebox，datebox，combobox，combotree 可自行扩展
+                        options: {
+                            required: true//设置编辑规则属性
+                        }
+                    }},
+                {
+                    field : 'region',
+                    title : 'Region',
+                    //width : '150',
+                    editor: {//设置其为可编辑
+                        type: 'validatebox',//设置编辑样式 自带样式有：text，textarea，checkbox，numberbox，validatebox，datebox，combobox，combotree 可自行扩展
+                        options: {
+                            required: true//设置编辑规则属性
+                        }
+                    }},
+                {
+                    field : 'city',
+                    title : 'City',
                     //width : '150',
                     editor: {//设置其为可编辑
                         type: 'validatebox',//设置编辑样式 自带样式有：text，textarea，checkbox，numberbox，validatebox，datebox，combobox，combotree 可自行扩展
@@ -87,6 +117,16 @@ $(function() {
                         }
                     }},
                 {
+                    field : 'dK1type',
+                    title : '域名关键字1的类型',
+                    // width : '150',
+                    editor: {//设置其为可编辑
+                        type: 'validatebox',//设置编辑样式 自带样式有：text，textarea，checkbox，numberbox，validatebox，datebox，combobox，combotree 可自行扩展
+                        options: {
+                            required: true//设置编辑规则属性
+                        }
+                    }},
+                {
                     field : 'domainKey2',
                     title : '域名关键字2',
                    // width : '150',
@@ -97,9 +137,29 @@ $(function() {
                         }
                     }},
                 {
+                    field : 'dK2type',
+                    title : '域名关键字2的类型',
+                    // width : '150',
+                    editor: {//设置其为可编辑
+                        type: 'validatebox',//设置编辑样式 自带样式有：text，textarea，checkbox，numberbox，validatebox，datebox，combobox，combotree 可自行扩展
+                        options: {
+                            required: true//设置编辑规则属性
+                        }
+                    }},
+                {
                     field : 'domainKey3',
                     title : '域名关键字3',
                     //width : '150',
+                    editor: {//设置其为可编辑
+                        type: 'validatebox',//设置编辑样式 自带样式有：text，textarea，checkbox，numberbox，validatebox，datebox，combobox，combotree 可自行扩展
+                        options: {
+                            required: true//设置编辑规则属性
+                        }
+                    }},
+                {
+                    field : 'dK3type',
+                    title : '域名关键字3的类型',
+                    // width : '150',
                     editor: {//设置其为可编辑
                         type: 'validatebox',//设置编辑样式 自带样式有：text，textarea，checkbox，numberbox，validatebox，datebox，combobox，combotree 可自行扩展
                         options: {
@@ -202,11 +262,17 @@ $(function() {
                                 time: '请输入时间:',
                                 MAC: '请输入MAC:',
                                 VPNIP: '请输入VPNIP:',
-                                userIP: '请输入UserIP:',
                                 websiteIP: '请输入WebsiteIP:',
+                                userIP: '请输入UserIP:',
+                                country: '请输入国家：',
+                                region: '请输入省份',
+                                city: '请输入城市',
                                 domainKey1: '请输入域名关键字1:',
+                                DK1type: '请输入域名关键字1的类型',
                                 domainKey2: '请输入域名关键字2:',
+                                DK2type: '请输入域名关键字1的类型',
                                 domainKey3: '请输入域名关键字3:',
+                                DK3type: '请输入域名关键字1的类型',
                                 osFamily: '请输入操作系统家族:',
                                 osName: '请输入操作系统名称:',
                                 uaFamily: '请输入浏览器名称:',
@@ -315,10 +381,11 @@ function deleteRow(index,rowIndex){
 }
 
 function saveRow(index,node){
-    var json = {id:node.id, time:node.time, MAC:node.MAC, VPNIP:node.VPNIP, userIP:node.userIP, websiteIP:node.websiteIP,
-    domainKey1:node.domainKey1, domainKey2:node.domainKey2, domainKey3:node.domainKey3, osFamily:node.osFamily,
-    osName:node.osName, uaFamily:node.uaFamily, browserVersionInfo:node.browserVersionInfo,type:node.type,
-        protocol:node.protocol,host:node.host};
+    var json = {id:node.id, time:node.time, MAC:node.MAC, VPNIP:node.VPNIP,websiteIP:node.websiteIP, userIP:node.userIP,
+    domainKey1:node.domainKey1,DK1type:node.DK1type, domainKey2:node.domainKey2, DK2type:node.DK2type, DK3type:node.DK3type,
+        domainKey3:node.domainKey3, country:node.country,region:node.region,
+        city:node.city, osFamily:node.osFamily, osName:node.osName, uaFamily:node.uaFamily, browserVersionInfo:node.browserVersionInfo,
+        type:node.type, protocol:node.protocol,host:node.host};
 
     var encodeJson=JSON.stringify(json);
     $.ajax({

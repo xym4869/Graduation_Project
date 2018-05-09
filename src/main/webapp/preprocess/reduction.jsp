@@ -29,7 +29,7 @@
         <tr>
             <td></td>
             <td><a id="reduc_submit_id" href="" class="easyui-linkbutton"
-                   data-options="iconCls:'icon-door_in'">归约</a></td>
+                   data-options="iconCls:'icon-door_in'">集成</a></td>
         </tr>
 
     </table>
