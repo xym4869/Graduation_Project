@@ -157,7 +157,6 @@ public class HUtils {
             while (fss.hasNext()) {
                 LocatedFileStatus file = fss.next();
                 if (file.isFile() && file.toString().contains("part")) {//只下载文件名包含“part”的文件，也就是结果文件
-                    // 使用这个才能下载成功
                     fs.copyToLocalFile(false, file.getPath(), new Path(dst,
                             "hdfs_" + (i++) + HUtils.DOWNLOAD_EXTENSION), true);
                 }

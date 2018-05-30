@@ -17,14 +17,13 @@ public class PreprocessingReducer extends Reducer<Text, Text, NullWritable, Text
 
     @Override
     protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-        System.out.println("执行reducer");
         try {
             String line = "";
             String analyze = "";
             String result = "";
             List<String> resultList = new ArrayList<String>();
-            for (Text value : values) {
-                line = value.toString();
+            for (Text value : values) {//对map后shuffle和排序后的分区进行遍历处理
+                line = value.toString();//获取value内容
                 analyze = Analyze.Analyze(line);
 
                 if (analyze != null)

@@ -2,13 +2,15 @@
 
 
 <body>
-	<div style="padding-left: 30px;font-size: 20px;padding-top:10px;">HDFS文件下载</div>
+	<div style="text-align:center;padding-left: 30px;font-size: 30px;padding-top:10px;">HDFS文件下载</div>
 	<br>
-	<div style="padding-left: 30px;font-size: 15px;padding-top:10px;">
+	<div style="text-align:center;padding-left: 30px;font-size: 15px;padding-top:10px;">
 	我们需要把数据处理后的结果数据拿到本地，以便后面的数据入库操作。<br>
+	</div>
+	<div style="padding-left: 35%;padding-top:10px;">
 		<table>
 			<tr>
-				<td><%--@declare id="name"--%><label for="name">HDFS路径:</label>
+				<td><%--@declare id="name"--%><label for="name" style="font-size:13px">HDFS路径:</label>
 				</td>
 				<td><input class="easyui-validatebox" type="text"
 					id="fromHDFSFileId" data-options="required:true"
@@ -16,7 +18,7 @@
 
 			</tr>
 			<tr>
-				<td><label for="name">本地路径:</label>
+				<td><label for="name" style="font-size:13px">本地路径:</label>
 				</td>
 				<td><input class="easyui-validatebox" type="text"
 					id="tolocalFileId" data-options="required:true" style="width:300px"

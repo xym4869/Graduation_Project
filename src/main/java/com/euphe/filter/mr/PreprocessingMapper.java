@@ -14,18 +14,17 @@ public class PreprocessingMapper extends Mapper<LongWritable, Text, Text, Text> 
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws  InterruptedException {
-        String line = value.toString();
+        String line = value.toString();//获取文件中一行内容
         log.info(line);
 
-        System.out.println("执行map");
         Text MacKey = new Text();
         line = Detect.Detect(line);
-        String mac = Detect.getMac();
+        String mac = Detect.getMac();//将MAC值作为key
 
-        if(Detect.detectStatus == 1){
+        if(Detect.detectStatus == 1){//判断是否有继续处理价值
             MacKey.set(mac);
             try {
-                context.write(MacKey, new Text(line));
+                context.write(MacKey, new Text(line));//MAC值作为key，获取行作为value
             } catch (IOException e) {
                 e.printStackTrace();
             }

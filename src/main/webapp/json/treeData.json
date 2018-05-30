@@ -50,7 +50,7 @@
     },
     "children":[{
       "id":121,
-      "text":"文件上传到HDFS",
+      "text":"文件上传",
       "attributes":{
         "folder":"0",
         "url":"preprocess/upload.jsp"
@@ -87,7 +87,7 @@
       }
     },{
       "id":1240,
-      "text":"数据过滤到hdfs",
+      "text":"数据过滤到HDFS",
       "attributes":{
         "folder":"0",
         "url":"preprocess/db2hdfs.jsp"

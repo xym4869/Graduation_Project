@@ -3,16 +3,16 @@
 
 <body>
 
-	<div style="padding-left: 30px;font-size: 20px;padding-top:10px;">本地文件上传</div>
+	<div style="text-align:center;padding-left: 30px;font-size: 30px;padding-top:10px;">本地文件上传</div>
 	<br>
-	<div style="padding-left: 30px;font-size: 15px;padding-top:10px;"><br>
+	<div style="text-align:center;padding-left: 30px;font-size: 15px;padding-top:10px;"><br>
 		如果打开了MR任务监控页面，请先关闭，再提交本次MR任务。输入路径请输入文件的完整路径。<br>
 	</div>
-	<div style="padding-left: 30px;font-size: 20px;padding-top:10px;">  
+	<div style="padding-left: 35%;padding-top:10px;">
 	 
 		<table>
 			<tr>
-				<td><%--@declare id="name"--%><label for="name">输入路径:</label>
+				<td><%--@declare id="name"--%><label for="name" style="font-size:13px">输入路径:</label>
 				</td>
 				<td><input class="easyui-validatebox" type="text"
 					id="localFileId" data-options="required:true" style="width:300px"

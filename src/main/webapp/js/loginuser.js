@@ -97,7 +97,8 @@ $(function() {
 //			                        });
 			                    }
 			                }
-			            }, '-', {
+			            },
+							'-', {
 			                text: "修改",
 			                iconCls: "icon-edit",
 			                handler: function () {
@@ -114,7 +115,8 @@ $(function() {
 			                        }
 			                    }
 			                }
-			            }, '-', {
+			            },
+							'-', {
 			                text: "保存",
 			                iconCls: "icon-save",
 			                handler: function () {

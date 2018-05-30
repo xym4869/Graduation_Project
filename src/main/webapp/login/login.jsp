@@ -58,13 +58,13 @@
 <div id="user_login_loginDialog" style="display: none;width: 300px;height: 210px;overflow: hidden;">
 	<div id="user_login_loginTab">
 		<div style="overflow: hidden;">
-			<div>
-				<div class="info">
-					<div class="tip icon-tip"></div>
-					<div>用户名是"admin"，密码是"admin"</div>
-				</div>
-			</div>
-			<div align="center">
+			<%--<div>--%>
+				<%--<div class="info">--%>
+					<%--<div class="tip icon-tip"></div>--%>
+					<%--<div>用户名是"admin"，密码是"admin"</div>--%>
+				<%--</div>--%>
+			<%--</div>--%>
+			<div align="center"  style="padding-top: 5%">
 				<form method="post" id="user_login_loginInputForm">
 					<table class="tableForm">
 						<tr>
@@ -74,7 +74,7 @@
 						</tr>
 						<tr>
 							<th>密码</th>
-							<td><input type="password" name="password" class="easyui-validatebox" data-options="required:true" style="width: 150px;" value="admin" /></td>
+							<td><input type="password" name="password" class="easyui-validatebox" data-options="required:true" value="admin" /></td>
 						</tr>
 					</table>
 				</form>

@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <div  data-options="region:'north',border:false" style="height:60px;padding:50px 50px 10px 50px;">
-  <h1> Hadoop集群配置表</h1><br><hr><br>
+  <h1 style="font-size: larger"> Hadoop集群配置表</h1><br><hr><br>
   </div>
     <table id="hconstantsid" class ="easyui-datagrid">
 	

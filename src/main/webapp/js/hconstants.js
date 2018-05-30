@@ -12,8 +12,8 @@ $(function() {
 				nowrap : false,
 				fit : true,
 				pagination : true,// 分页控件
-				pageSize : 4, // 每页记录数，需要和pageList保持倍数关系
-				pageList : [ 4, 8, 12 ],
+				pageSize : 6, // 每页记录数，需要和pageList保持倍数关系
+				pageList : [ 6, 12, 18 ],
 				rownumbers : true,// 行号
 				pagePosition : 'top',
 				url : 'dB/dB_getTableData.action',
