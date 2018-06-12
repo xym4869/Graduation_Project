@@ -1107,6 +1107,9 @@
 .icon-dvd_link
   {    background: url('icons/dvd_link.png') no-repeat scroll center center transparent;
 }
+.icon-edit
+{    background: url('icons/application_form_edit.png') no-repeat scroll center center transparent;
+}
 .icon-email
   {    background: url('icons/email.png') no-repeat scroll center center transparent;
 }
@@ -2202,6 +2205,12 @@
 .icon-rainbow
   {    background: url('icons/rainbow.png') no-repeat scroll center center transparent;
 }
+.icon-remove
+{    background: url('icons/edit_remove.png') no-repeat scroll center center transparent;
+}
+.icon-redo
+{    background: url('icons/redo.png') no-repeat scroll center center transparent;
+}
 .icon-report
   {    background: url('icons/report.png') no-repeat scroll center center transparent;
 }
@@ -2295,6 +2304,9 @@
 .icon-ruby_put
   {    background: url('icons/ruby_put.png') no-repeat scroll center center transparent;
 }
+.icon-save
+{    background: url('icons/table_save.png') no-repeat scroll center center transparent;
+}
 .icon-script
   {    background: url('icons/script.png') no-repeat scroll center center transparent;
 }
@@ -2336,6 +2348,9 @@
 }
 .icon-script_save
   {    background: url('icons/script_save.png') no-repeat scroll center center transparent;
+}
+.icon-search
+{    background: url('icons/search.png') no-repeat scroll center center transparent;
 }
 .icon-server
   {    background: url('icons/server.png') no-repeat scroll center center transparent;

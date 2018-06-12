@@ -17,8 +17,8 @@
 
 <body  class="easyui-layout">
 	
-	<div data-options="region:'north',border:false" style="height:60px;background:#B3DFDA;padding:10px;">
-	<h1 style="font-size: 15px">基于大数据的用户行为分析系统中预处理子系统</h1>
+	<div data-options="region:'north',border:false" style="height:80px;background:#B3DFDA;text-align: center">
+	<h1 style="font-size: 30px">基于大数据的用户行为分析系统中预处理子系统</h1>
 	</div>
 	<div data-options="region:'west',split:true,title:'West'" style="width:190px;padding:10px;">
 		<ul id="navid" class="easyui-tree" data-options="url:'json/treeData.json',method:'get',animate:true,dnd:true"></ul>
